@@ -13,4 +13,6 @@ ENV LD_LIBRARY_PATH=/usr/local/lib
 
 WORKDIR /app
 
-CMD ["csvs-to-sqlite"]
+COPY entrypoint.sh entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]
