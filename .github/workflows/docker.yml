@@ -1,0 +1,23 @@
+name: Docker
+
+env:
+  IMAGE_NAME: csvs-to-sqlite
+  IMAGE_TAG: ${{ github.sha }}
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  test-build:
+    name: "Test & Build"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker build -t docker.pkg.github.com/${{ github.repository }}/${IMAGE_NAME}:${IMAGE_TAG} .
+        working-directory: ./csvs-to-sqlite
