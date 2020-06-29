@@ -11,8 +11,8 @@ COPY --from=build /usr/local/bin /usr/local/bin
 
 ENV LD_LIBRARY_PATH=/usr/local/lib
 
-WORKDIR /app
-
 COPY entrypoint.sh entrypoint.sh
 
-ENTRYPOINT ["./entrypoint.sh"]
+WORKDIR /app
+
+ENTRYPOINT ["/entrypoint.sh"]
