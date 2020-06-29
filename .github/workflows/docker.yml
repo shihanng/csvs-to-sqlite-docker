@@ -19,5 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: docker build -t docker.pkg.github.com/${{ github.repository }}/${IMAGE_NAME}:${IMAGE_TAG} .
+      - name: "Test & Build"
+        run: |
+          docker build -t docker.pkg.github.com/${{ github.repository }}/${IMAGE_NAME}:${IMAGE_TAG} .
+          docker run --rm docker.pkg.github.com/${{ github.repository }}/${IMAGE_NAME}:${IMAGE_TAG} --version
         working-directory: ./csvs-to-sqlite
