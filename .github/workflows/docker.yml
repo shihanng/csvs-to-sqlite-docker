@@ -14,14 +14,20 @@ on:
 
 jobs:
   test-build:
-    name: "Test & Build"
+    name: "Build and test"
     runs-on: ubuntu-latest
     env:
       TARGET_IMAGE: docker.pkg.github.com/${{ github.repository }}/${IMAGE_NAME}:${IMAGE_TAG}
 
     steps:
       - uses: actions/checkout@v2
-      - name: "Test & Build"
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: "12"
+      - run: npm install
+      - name: "Build image"
         run: |
           docker build -t ${{ env.TARGET_IMAGE }} .
-          docker run --rm ${{ env.TARGET_IMAGE }} --version
+      - name: "Run tests"
+        run: |
+          npm test
