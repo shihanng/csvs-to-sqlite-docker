@@ -1,5 +1,8 @@
 # csvs-to-sqlite-docker
 
+![Tests](https://github.com/shihanng/csvs-to-sqlite-docker/workflows/Tests/badge.svg)
+![GitHub](https://img.shields.io/github/license/shihanng/csvs-to-sqlite-docker)
+
 Docker Image for [csvs-to-sqlite](https://github.com/simonw/csvs-to-sqlite).
 
 ## Usage
