@@ -25,9 +25,11 @@ jobs:
         with:
           node-version: "12"
       - run: npm install
+        working-directory: __tests__
       - name: "Build image"
         run: |
           docker build -t ${{ env.TARGET_IMAGE }} .
       - name: "Run tests"
+        working-directory: __tests__
         run: |
           npm test
