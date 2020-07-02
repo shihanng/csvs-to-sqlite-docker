@@ -1,0 +1,31 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  test-build:
+    name: "Build and test"
+    runs-on: ubuntu-latest
+    env:
+      TARGET_IMAGE: test/image:${{ github.sha }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: "12"
+      - run: npm install
+        working-directory: __tests__
+      - name: "Build image"
+        run: |
+          docker build -t ${{ env.TARGET_IMAGE }} .
+      - name: "Run tests"
+        working-directory: __tests__
+        run: |
+          npm test
