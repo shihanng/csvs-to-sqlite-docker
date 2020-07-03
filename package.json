@@ -4,7 +4,7 @@
   "description": "Docker image for csvs-to-sqlite.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "bats __tests__"
   },
   "repository": {
     "type": "git",
