@@ -1,0 +1,32 @@
+{
+  "name": "csvs-to-sqlite-docker",
+  "version": "1.0.0",
+  "description": "Docker image for csvs-to-sqlite.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shihanng/csvs-to-sqlite-docker.git"
+  },
+  "keywords": [
+    "sqlite",
+    "python",
+    "csv",
+    "datasette",
+    "datasette-io",
+    "docker"
+  ],
+  "author": "Shi Han NG",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/shihanng/csvs-to-sqlite-docker/issues"
+  },
+  "homepage": "https://github.com/shihanng/csvs-to-sqlite-docker#readme",
+  "devDependencies": {
+    "bats": "^1.1.0",
+    "bats-assert": "git+https://github.com/bats-core/bats-assert.git",
+    "bats-support": "git+https://github.com/bats-core/bats-support.git"
+  }
+}
