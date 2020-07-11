@@ -10,7 +10,7 @@ Docker Image for [csvs-to-sqlite](https://github.com/simonw/csvs-to-sqlite).
 ```
 docker run --rm \
   -v $(pwd):/app \
-  docker push shihanng/csvs-to-sqlite:1.0.0 \
+  shihanng/csvs-to-sqlite:1.0.0 \
   --help
 ```
 
